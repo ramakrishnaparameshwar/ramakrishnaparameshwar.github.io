@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramakrishna Parameshwar - ATS Resume</title>
+  <meta name="description" content="Professional ATS Resume of Ramakrishna Parameshwar - BBA International Business Student">
+
+  <!-- Google Fonts: Inter for ultra-clean ATS readability -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for UI icons (hidden during print) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* Base ATS Styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: #111827;
+      background-color: #f3f4f6;
+      padding: 20px;
+    }
+
+    /* Screen UI Container */
+    .screen-toolbar {
+      max-width: 820px;
+      margin: 0 auto 16px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111827;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background: #374151;
+      color: #e5e7eb;
+    }
+    .btn-secondary:hover {
+      background: #4b5563;
+      color: white;
+    }
+
+    /* Resume Paper Container */
+    .resume-container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px 48px;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    /* Header Section */
+    .resume-header {
+      text-align: center;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #111827;
+      margin-bottom: 14px;
+    }
+
+    .resume-header h1 {
+      font-size: 20pt;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .contact-line {
+      font-size: 9.5pt;
+      color: #374151;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-line a {
+      color: #111827;
+      text-decoration: none;
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-size: 11.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.75px;
+      color: #111827;
+      border-bottom: 1px solid #9ca3af;
+      padding-bottom: 3px;
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+
+    /* Entries and Roles */
+    .entry {
+      margin-bottom: 10px;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 10.5pt;
+    }
+
+    .entry-title {
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .entry-subtitle {
+      font-weight: 600;
+      color: #374151;
+      font-size: 10pt;
+    }
+
+    .entry-date {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #4b5563;
+      text-align: right;
+    }
+
+    .entry-location {
+      font-size: 9.5pt;
+      color: #4b5563;
+      font-style: italic;
+    }
+
+    /* Bullet Lists */
+    ul.bullet-list {
+      list-style-type: disc;
+      margin-left: 18px;
+      margin-top: 4px;
+    }
+
+    ul.bullet-list li {
+      margin-bottom: 3px;
+      font-size: 10pt;
+      color: #1f2937;
+      line-height: 1.4;
+    }
+
+    /* Skills Key-Value */
+    .skills-grid {
+      display: table;
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .skill-row {
+      display: table-row;
+    }
+
+    .skill-category {
+      display: table-cell;
+      font-weight: 700;
+      width: 22%;
+      padding-bottom: 4px;
+      font-size: 10pt;
+      color: #111827;
+    }
+
+    .skill-items {
+      display: table-cell;
+      font-size: 10pt;
+      color: #374151;
+      padding-bottom: 4px;
+    }
+
+    p.summary-text {
+      font-size: 10pt;
+      color: #1f2937;
+      line-height: 1.45;
+      text-align: justify;
+    }
+
+    /* Strict ATS Print Rules */
+    @media print {
+      @page {
+        margin: 15mm;
+        size: letter portrait;
+      }
+
+      body {
+        background: #ffffff !important;
+        padding: 0 !important;
+        font-size: 10pt !important;
+        color: #000000 !important;
+      }
+
+      .screen-toolbar, .no-print, header, footer {
+        display: none !important;
+      }
+
+      .resume-container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: #000000 !important;
+      }
+
+      .resume-header {
+        border-bottom: 1.5pt solid #000000 !important;
+      }
+
+      .section-title {
+        border-bottom: 1pt solid #000000 !important;
+        color: #000000 !important;
+      }
+
+      ul.bullet-list li {
+        color: #000000 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Toolbar for Printing & Navigation (Auto-hidden on print) -->
+  <div class="screen-toolbar no-print">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <a href="index.html" class="btn btn-secondary">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Back to Portfolio</span>
+      </a>
+      <span style="font-size: 13px; color: #9ca3af;">ATS Compliant Single-Page Layout</span>
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <button onclick="window.print()" class="btn btn-primary">
+        <i class="fa-solid fa-print"></i>
+        <span>Print to PDF</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Resume Content (Standard ATS Document Structure) -->
+  <main class="resume-container">
+
+    <!-- Header / Contact Info -->
+    <header class="resume-header">
+      <h1>RAMAKRISHNA PARAMESHWAR</h1>
+      <div class="contact-line">
+        <span>Coimbatore, India</span>
+        <span>•</span>
+        <span>+91 88075 31108</span>
+        <span>•</span>
+        <a href="mailto:ramakrishnaparameshwar8@gmail.com">ramakrishnaparameshwar8@gmail.com</a>
+        <span>•</span>
+        <a href="https://linkedin.com/in/ramakrishna-parameshwar-7865672a8" target="_blank">linkedin.com/in/ramakrishna-parameshwar-7865672a8</a>
+        <span>•</span>
+        <a href="https://github.com/ramakrishnaparameshwar" target="_blank">github.com/ramakrishnaparameshwar</a>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section>
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary-text">
+        Second-year <strong>BBA in International Business</strong> undergraduate with practical experience in sales promotion, large-scale event operations, team leadership, and manufacturing workflows. Highly communicative, customer-focused, and proactive problem solver with a demonstrated record of leading 30+ volunteers and managing 50 commercial stalls for a 2,000+ attendee event. Seeking to leverage customer relationship management and operational execution skills in high-growth marketing and business development roles.
+      </p>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2 class="section-title">Education</h2>
+      
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Kumaraguru College of Liberal Arts and Science</span>
+          <span class="entry-date">2025 – 2028</span>
+        </div>
+        <div class="entry-header">
+          <span class="entry-subtitle">Bachelor of Business Administration (BBA) – International Business</span>
+          <span class="entry-location">Coimbatore, India</span>
+        </div>
+      </div>
+
+      <div class="entry" style="margin-bottom: 0;">
+        <div class="entry-header">
+          <span class="entry-title">Indian Language School</span>
+          <span class="entry-date">Completed 2025</span>
+        </div>
+        <div class="entry-header">
+          <span class="entry-subtitle">Senior Secondary (Class 12: 75%) | Secondary School (Class 10: 70%)</span>
+          <span class="entry-location">India</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership & Event Experience -->
+    <section>
+      <h2 class="section-title">Leadership & Event Operations Experience</h2>
+      
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Clutchless Car & Lifestyle Event</span>
+          <span class="entry-date">2026</span>
+        </div>
+        <div class="entry-header">
+          <span class="entry-subtitle">Event Operations & Volunteer Lead (Stalls Department)</span>
+          <span class="entry-location">Coimbatore, India</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Collaborated as part of the core 10–15 member organizing committee to ensure flawless logistical execution for an event attended by over 2,000 visitors.</li>
+          <li>Directed the Stalls Department, supervising commercial allocations, layout planning, and vendor operations across 50 active vendor stalls.</li>
+          <li>Led and coordinated a 30-member volunteer team, managing crowd control, attendee inquiries, and stage flow.</li>
+          <li>Spearheaded promotional outreach through Instagram stories, community groups, and direct communications to maximize event attendance.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Kumaraguru College of Liberal Arts and Science</span>
+          <span class="entry-date">2nd Year (Current)</span>
+        </div>
+        <div class="entry-header">
+          <span class="entry-subtitle">Class Representative</span>
+          <span class="entry-location">Coimbatore, India</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Represent the student body to faculty and administration, coordinating announcements, academic logistics, and student inquiries.</li>
+          <li>Gather feedback from classmates to resolve operational and academic concerns collaboratively.</li>
+        </ul>
+      </div>
+
+      <div class="entry" style="margin-bottom: 0;">
+        <div class="entry-header">
+          <span class="entry-title">Department Student Association</span>
+          <span class="entry-date">1st Year</span>
+        </div>
+        <div class="entry-header">
+          <span class="entry-subtitle">Deputy Executive</span>
+          <span class="entry-location">Coimbatore, India</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Served as a communication bridge between faculty coordinators and first-year delegates.</li>
+          <li>Assisted in planning, scheduling, and executing departmental workshops, guest lectures, and cultural events.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Internship Experience -->
+    <section>
+      <h2 class="section-title">Industry Internship</h2>
+      
+      <div class="entry" style="margin-bottom: 0;">
+        <div class="entry-header">
+          <span class="entry-title">Sree Balaji Press Tools</span>
+          <span class="entry-date">May 2026</span>
+        </div>
+        <div class="entry-header">
+          <span class="entry-subtitle">Summer Intern – Production & Operations</span>
+          <span class="entry-location">Coimbatore, India</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Observed industrial manufacturing and pressing processes to analyze assembly sequences and floor throughput.</li>
+          <li>Gained practical exposure to material handling, workplace safety protocols, and plant-level supply logistics.</li>
+          <li>Shadowed shop-floor supervisors to understand workforce management, delegation, and quality compliance.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills & Tools -->
+    <section>
+      <h2 class="section-title">Skills & Competencies</h2>
+      <div class="skills-grid">
+        <div class="skill-row">
+          <div class="skill-category">Sales & Marketing:</div>
+          <div class="skill-items">Event Promotion, Customer Communication, Vendor Coordination, Public Relations, Lead Generation</div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-category">Professional Skills:</div>
+          <div class="skill-items">Team Leadership, Crowd Management, Adaptability, Problem Solving, Operational Logistics</div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-category">Digital & Software:</div>
+          <div class="skill-items">Microsoft Excel (Intermediate), Microsoft PowerPoint, Microsoft Word, Instagram Marketing, CapCut, AI Prompting (ChatGPT)</div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-category">Languages:</div>
+          <div class="skill-items">English (Fluent), Hindi (Fluent), Tamil (Fluent)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications & Interests -->
+    <section>
+      <h2 class="section-title">Certifications & Interests</h2>
+      <ul class="bullet-list">
+        <li><strong>Certifications:</strong> Microsoft Excel Specialization Course – Coursera</li>
+        <li><strong>Interests:</strong> Football, Music, International Business Trends, Event Production</li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>
